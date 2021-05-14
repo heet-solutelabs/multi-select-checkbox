@@ -1,6 +1,6 @@
 {
   "name": "@heet-solutelabs/multi-select-checkbox",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "dependencies": {
     "@babel/cli": "^7.10.5",
     "@babel/core": "^7.10.5",
