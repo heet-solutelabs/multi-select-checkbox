@@ -1,6 +1,6 @@
 {
   "name": "@heet-solutelabs/multi-select-checkbox",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "dependencies": {
     "@babel/cli": "^7.10.5",
     "@babel/core": "^7.10.5",
@@ -17,6 +17,7 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
+    "publish:npm": "rm -rf dist && mkdir dist &&  babel src -d dist --copy-files",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
