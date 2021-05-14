@@ -11,6 +11,8 @@ var _MultiSelectCheckBox = require("./MultiSelectCheckBox");
 
 var _CheckBoxList = require("./CheckBoxList");
 
+var _jsxRuntime = require("react/jsx-runtime");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
@@ -31,14 +33,18 @@ function App() {
       selectedValue = _React$useState2[0],
       setSelectedValue = _React$useState2[1];
 
-  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("p", null, JSON.stringify(selectedValue, null, 2)), /*#__PURE__*/_react.default.createElement(_MultiSelectCheckBox.MultiSelectCheckBox, {
-    selectAllShow: true,
-    selectAllShowClassName: "Inside",
-    listOfCheckBoxItemsClassName: "test",
-    CheckBoxList: _CheckBoxList.CheckBoxList,
-    onChange: function onChange(item) {
-      //  get All list of selected Item....
-      setSelectedValue(item);
-    }
-  }));
+  return /*#__PURE__*/(0, _jsxRuntime.jsxs)(_jsxRuntime.Fragment, {
+    children: [/*#__PURE__*/(0, _jsxRuntime.jsx)("p", {
+      children: JSON.stringify(selectedValue, null, 2)
+    }), /*#__PURE__*/(0, _jsxRuntime.jsx)(_MultiSelectCheckBox.MultiSelectCheckBox, {
+      selectAllShow: true,
+      selectAllShowClassName: "Inside",
+      listOfCheckBoxItemsClassName: "test",
+      CheckBoxList: _CheckBoxList.CheckBoxList,
+      onChange: function onChange(item) {
+        //  get All list of selected Item....
+        setSelectedValue(item);
+      }
+    })]
+  });
 }

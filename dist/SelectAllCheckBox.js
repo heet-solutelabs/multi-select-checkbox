@@ -5,6 +5,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
+var _jsxRuntime = require("react/jsx-runtime");
+
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -30,40 +32,45 @@ function SelectAllCheckBox(_ref) {
       setSelectCheckBox = _ref$setSelectCheckBo === void 0 ? [] : _ref$setSelectCheckBo,
       _onChange = _ref.onChange,
       selectAllShowClassName = _ref.selectAllShowClassName;
-  return /*#__PURE__*/React.createElement(React.Fragment, null, Array.isArray(selectCheckBox) && selectCheckBox.length > 0 && selectCheckBox.some(function (item) {
-    return item.label && item.value;
-  }) && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("input", {
-    id: "select_all_checkbox",
-    className: selectAllShowClassName,
-    checked: Array.isArray(selectCheckBox) && selectCheckBox.length > 0 && selectCheckBox.every(function (item) {
-      return item.is_active === true;
-    }),
-    type: "checkbox",
-    onChange: function onChange(e) {
-      var selectedAllCheckBox = _toConsumableArray(selectCheckBox).map(function (item) {
-        var obj = _objectSpread(_objectSpread({}, item), {}, {
-          is_active: e.target.checked
-        });
+  return /*#__PURE__*/(0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
+    children: Array.isArray(selectCheckBox) && selectCheckBox.length > 0 && selectCheckBox.some(function (item) {
+      return item.label && item.value;
+    }) && /*#__PURE__*/(0, _jsxRuntime.jsxs)(_jsxRuntime.Fragment, {
+      children: [/*#__PURE__*/(0, _jsxRuntime.jsx)("input", {
+        id: "select_all_checkbox",
+        className: selectAllShowClassName,
+        checked: Array.isArray(selectCheckBox) && selectCheckBox.length > 0 && selectCheckBox.every(function (item) {
+          return item.is_active === true;
+        }),
+        type: "checkbox",
+        onChange: function onChange(e) {
+          var selectedAllCheckBox = _toConsumableArray(selectCheckBox).map(function (item) {
+            var obj = _objectSpread(_objectSpread({}, item), {}, {
+              is_active: e.target.checked
+            });
 
-        return obj;
-      });
+            return obj;
+          });
 
-      var arre = selectedAllCheckBox.filter(function (item) {
-        return item.is_active;
-      }).map(function (item) {
-        return _objectSpread({}, item);
-      });
+          var arre = selectedAllCheckBox.filter(function (item) {
+            return item.is_active;
+          }).map(function (item) {
+            return _objectSpread({}, item);
+          });
 
-      _onChange(arre.map(function (item) {
-        delete item.is_active;
-        return _objectSpread({}, item);
-      }));
+          _onChange(arre.map(function (item) {
+            delete item.is_active;
+            return _objectSpread({}, item);
+          }));
 
-      setSelectCheckBox(selectedAllCheckBox);
-    }
-  }), /*#__PURE__*/React.createElement("label", {
-    htmlFor: "select_all_checkbox"
-  }, "select all")));
+          setSelectCheckBox(selectedAllCheckBox);
+        }
+      }), /*#__PURE__*/(0, _jsxRuntime.jsx)("label", {
+        htmlFor: "select_all_checkbox",
+        children: "select all"
+      })]
+    })
+  });
 }
 
 var _default = SelectAllCheckBox;

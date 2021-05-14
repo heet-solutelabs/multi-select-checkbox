@@ -5,6 +5,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
+var _jsxRuntime = require("react/jsx-runtime");
+
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -29,53 +31,57 @@ function ListAllCheckBox(_ref) {
       setSelectCheckBox = _ref.setSelectCheckBox,
       _onChange = _ref.onChange,
       listOfCheckBoxItemsClassName = _ref.listOfCheckBoxItemsClassName;
-  return /*#__PURE__*/React.createElement(React.Fragment, null, Array.isArray(selectCheckBox) && selectCheckBox.length > 0 && selectCheckBox.map(function (item, index) {
-    return /*#__PURE__*/React.createElement("div", {
-      key: index
-    }, item.label && item.value && /*#__PURE__*/React.createElement("div", {
-      className: "flex",
-      style: {
-        marginBottom: "10px"
-      }
-    }, /*#__PURE__*/React.createElement("input", {
-      id: index,
-      className: listOfCheckBoxItemsClassName,
-      type: "checkbox",
-      checked: selectCheckBox && selectCheckBox.length > 0 && selectCheckBox.every(function (item) {
-        return item.is_active === true;
-      }) ? true : selectCheckBox !== null && selectCheckBox !== void 0 && selectCheckBox.find(function (current_selectbox) {
-        return Object.is(current_selectbox === null || current_selectbox === void 0 ? void 0 : current_selectbox.is_active, item.is_active);
-      }) ? selectCheckBox === null || selectCheckBox === void 0 ? void 0 : selectCheckBox.find(function (current_selectbox) {
-        return Object.is(current_selectbox === null || current_selectbox === void 0 ? void 0 : current_selectbox.is_active, item.is_active);
-      }).is_active : false,
-      onChange: function onChange(e) {
-        var selectedCheckBox = _toConsumableArray(selectCheckBox).map(function (current_item) {
-          if (Object.is(current_item.label, item.label)) {
-            return _objectSpread(_objectSpread({}, current_item), {}, {
-              is_active: e.target.checked
-            });
-          } else {
-            return _objectSpread({}, current_item);
-          }
-        });
+  return /*#__PURE__*/(0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
+    children: Array.isArray(selectCheckBox) && selectCheckBox.length > 0 && selectCheckBox.map(function (item, index) {
+      return /*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
+        children: item.label && item.value && /*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
+          className: "flex",
+          style: {
+            marginBottom: "10px"
+          },
+          children: [/*#__PURE__*/(0, _jsxRuntime.jsx)("input", {
+            id: index,
+            className: listOfCheckBoxItemsClassName,
+            type: "checkbox",
+            checked: selectCheckBox && selectCheckBox.length > 0 && selectCheckBox.every(function (item) {
+              return item.is_active === true;
+            }) ? true : selectCheckBox !== null && selectCheckBox !== void 0 && selectCheckBox.find(function (current_selectbox) {
+              return (current_selectbox === null || current_selectbox === void 0 ? void 0 : current_selectbox.is_active) === item.is_active;
+            }) ? selectCheckBox === null || selectCheckBox === void 0 ? void 0 : selectCheckBox.find(function (current_selectbox) {
+              return (current_selectbox === null || current_selectbox === void 0 ? void 0 : current_selectbox.is_active) === item.is_active;
+            }).is_active : false,
+            onChange: function onChange(e) {
+              var selectedCheckBox = _toConsumableArray(selectCheckBox).map(function (current_item) {
+                if (Object.is(current_item.label, item.label)) {
+                  return _objectSpread(_objectSpread({}, current_item), {}, {
+                    is_active: e.target.checked
+                  });
+                } else {
+                  return _objectSpread({}, current_item);
+                }
+              });
 
-        var passOnChangedData = selectedCheckBox.filter(function (item) {
-          return item.is_active;
-        }).map(function (item) {
-          return _objectSpread({}, item);
-        });
+              var passOnChangedData = selectedCheckBox.filter(function (item) {
+                return item.is_active;
+              }).map(function (item) {
+                return _objectSpread({}, item);
+              });
 
-        _onChange(passOnChangedData.map(function (item) {
-          delete item.is_active;
-          return _objectSpread({}, item);
-        }));
+              _onChange(passOnChangedData.map(function (item) {
+                delete item.is_active;
+                return _objectSpread({}, item);
+              }));
 
-        setSelectCheckBox(selectedCheckBox);
-      }
-    }), /*#__PURE__*/React.createElement("label", {
-      htmlFor: index
-    }, item.label)));
-  }));
+              setSelectCheckBox(selectedCheckBox);
+            }
+          }), /*#__PURE__*/(0, _jsxRuntime.jsx)("label", {
+            htmlFor: index,
+            children: item.label
+          })]
+        })
+      }, index);
+    })
+  });
 }
 
 var _default = ListAllCheckBox;

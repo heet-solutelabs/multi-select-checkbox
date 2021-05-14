@@ -22,17 +22,13 @@ function ListAllCheckBox({
                       selectCheckBox.length > 0 &&
                       selectCheckBox.every((item) => item.is_active === true)
                         ? true
-                        : selectCheckBox?.find((current_selectbox) =>
-                            Object.is(
-                              current_selectbox?.is_active,
-                              item.is_active
-                            )
+                        : selectCheckBox?.find(
+                            (current_selectbox) =>
+                              current_selectbox?.is_active === item.is_active
                           )
-                        ? selectCheckBox?.find((current_selectbox) =>
-                            Object.is(
-                              current_selectbox?.is_active,
-                              item.is_active
-                            )
+                        ? selectCheckBox?.find(
+                            (current_selectbox) =>
+                              current_selectbox?.is_active === item.is_active
                           ).is_active
                         : false
                     }

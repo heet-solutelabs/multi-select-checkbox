@@ -6,6 +6,8 @@ require("./index.css");
 
 var _App = _interopRequireDefault(require("./App"));
 
+var _jsxRuntime = require("react/jsx-runtime");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_reactDom.default.render( /*#__PURE__*/React.createElement(_App.default, null), document.getElementById("root"));
+_reactDom.default.render( /*#__PURE__*/(0, _jsxRuntime.jsx)(_App.default, {}), document.getElementById("root"));

@@ -11,6 +11,8 @@ var _SelectAllCheckBox = _interopRequireDefault(require("./SelectAllCheckBox"));
 
 var _ListAllCheckBox = _interopRequireDefault(require("./ListAllCheckBox"));
 
+var _jsxRuntime = require("react/jsx-runtime");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
@@ -51,23 +53,26 @@ function MultiSelectCheckBox(_ref) {
       selectCheckBox = _React$useState2[0],
       setSelectCheckBox = _React$useState2[1];
 
-  return /*#__PURE__*/_react.default.createElement("div", null, selectAllShow && /*#__PURE__*/_react.default.createElement("div", {
-    style: {
-      marginBottom: "10px"
-    }
-  }, /*#__PURE__*/_react.default.createElement(_SelectAllCheckBox.default, {
-    selectCheckBox: selectCheckBox,
-    setSelectCheckBox: setSelectCheckBox,
-    onChange: function onChange(item) {
-      _onChange(item);
-    },
-    selectAllShowClassName: selectAllShowClassName
-  })), /*#__PURE__*/_react.default.createElement(_ListAllCheckBox.default, {
-    listOfCheckBoxItemsClassName: listOfCheckBoxItemsClassName,
-    selectCheckBox: selectCheckBox,
-    setSelectCheckBox: setSelectCheckBox,
-    onChange: function onChange(item) {
-      _onChange(item);
-    }
-  }));
+  return /*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
+    children: [selectAllShow && /*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
+      style: {
+        marginBottom: "10px"
+      },
+      children: /*#__PURE__*/(0, _jsxRuntime.jsx)(_SelectAllCheckBox.default, {
+        selectCheckBox: selectCheckBox,
+        setSelectCheckBox: setSelectCheckBox,
+        onChange: function onChange(item) {
+          _onChange(item);
+        },
+        selectAllShowClassName: selectAllShowClassName
+      })
+    }), /*#__PURE__*/(0, _jsxRuntime.jsx)(_ListAllCheckBox.default, {
+      listOfCheckBoxItemsClassName: listOfCheckBoxItemsClassName,
+      selectCheckBox: selectCheckBox,
+      setSelectCheckBox: setSelectCheckBox,
+      onChange: function onChange(item) {
+        _onChange(item);
+      }
+    })]
+  });
 }
