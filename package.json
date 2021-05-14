@@ -1,5 +1,5 @@
 {
-  "name": "react-starter",
+  "name": "@heet-solutelabs/MultiSelectCheckBox",
   "version": "0.1.0",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
@@ -21,6 +21,9 @@
       "react-app",
       "react-app/jest"
     ]
+  },
+  "repository": {
+    "url": "https://github.com/heet-solutelabs/MultiSelectCheckBox.git"
   },
   "browserslist": {
     "production": [
