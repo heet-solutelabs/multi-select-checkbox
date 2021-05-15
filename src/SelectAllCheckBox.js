@@ -1,3 +1,5 @@
+import PassOnChangeDataFun from "./utils/PassOnChangeDataFun";
+
 function SelectAllCheckBox({
   selectCheckBox = [],
   setSelectCheckBox = [],
@@ -20,29 +22,12 @@ function SelectAllCheckBox({
                 selectCheckBox.every((item) => item.is_active === true)
               }
               type="checkbox"
-              onChange={function (e) {
-                let selectedAllCheckBox = [...selectCheckBox].map(function (
-                  item
-                ) {
-                  let obj = {
-                    ...item,
-                    is_active: e.target.checked,
-                  };
-                  return obj;
-                });
-                let passOnChangeData = selectedAllCheckBox
-                  .filter((item) => item.is_active)
-                  .map(function (item) {
-                    return {
-                      ...item,
-                    };
-                  });
-                onChange(
-                  passOnChangeData.map((item) => {
-                    delete item.is_active;
-                    return { ...item };
-                  })
-                );
+              onChange={(e) => {
+                let selectedAllCheckBox = selectCheckBox.map((item) => ({
+                  ...item,
+                  is_active: e.target.checked,
+                }));
+                onChange(PassOnChangeDataFun(selectedAllCheckBox));
                 setSelectCheckBox(selectedAllCheckBox);
               }}
             />
