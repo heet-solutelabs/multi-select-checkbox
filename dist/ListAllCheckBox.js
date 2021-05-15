@@ -43,22 +43,16 @@ function ListAllCheckBox(_ref) {
             id: index,
             className: listOfCheckBoxItemsClassName,
             type: "checkbox",
-            checked: selectCheckBox && selectCheckBox.length > 0 && selectCheckBox.every(function (item) {
-              return item.is_active === true;
-            }) ? true : selectCheckBox !== null && selectCheckBox !== void 0 && selectCheckBox.find(function (current_selectbox) {
-              return (current_selectbox === null || current_selectbox === void 0 ? void 0 : current_selectbox.is_active) === item.is_active;
-            }) ? selectCheckBox === null || selectCheckBox === void 0 ? void 0 : selectCheckBox.find(function (current_selectbox) {
-              return (current_selectbox === null || current_selectbox === void 0 ? void 0 : current_selectbox.is_active) === item.is_active;
-            }).is_active : false,
+            checked: item === null || item === void 0 ? void 0 : item.is_active,
             onChange: function onChange(e) {
               var selectedCheckBox = _toConsumableArray(selectCheckBox).map(function (current_item) {
                 if (Object.is(current_item.label, item.label)) {
                   return _objectSpread(_objectSpread({}, current_item), {}, {
                     is_active: e.target.checked
                   });
-                } else {
-                  return _objectSpread({}, current_item);
                 }
+
+                return _objectSpread({}, current_item);
               });
 
               var passOnChangedData = selectedCheckBox.filter(function (item) {
