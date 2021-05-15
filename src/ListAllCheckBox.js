@@ -17,21 +17,7 @@ function ListAllCheckBox({
                     id={index}
                     className={listOfCheckBoxItemsClassName}
                     type="checkbox"
-                    checked={
-                      selectCheckBox &&
-                      selectCheckBox.length > 0 &&
-                      selectCheckBox.every((item) => item.is_active === true)
-                        ? true
-                        : selectCheckBox?.find(
-                            (current_selectbox) =>
-                              current_selectbox?.is_active === item.is_active
-                          )
-                        ? selectCheckBox?.find(
-                            (current_selectbox) =>
-                              current_selectbox?.is_active === item.is_active
-                          ).is_active
-                        : false
-                    }
+                    checked={item?.is_active}
                     onChange={function (e) {
                       let selectedCheckBox = [...selectCheckBox].map(function (
                         current_item
@@ -41,11 +27,10 @@ function ListAllCheckBox({
                             ...current_item,
                             is_active: e.target.checked,
                           };
-                        } else {
-                          return {
-                            ...current_item,
-                          };
                         }
+                        return {
+                          ...current_item,
+                        };
                       });
                       let passOnChangedData = selectedCheckBox
                         .filter((item) => item.is_active)
@@ -54,7 +39,6 @@ function ListAllCheckBox({
                             ...item,
                           };
                         });
-
                       onChange(
                         passOnChangedData.map((item) => {
                           delete item.is_active;

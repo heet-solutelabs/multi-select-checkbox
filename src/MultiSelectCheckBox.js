@@ -4,10 +4,11 @@ import ListAllCheckBox from "./ListAllCheckBox";
 
 export function MultiSelectCheckBox({
   CheckBoxList = [],
-  onChange,
+  onChange = function (item) {},
   selectAllShow,
   listOfCheckBoxItemsClassName = "",
   selectAllShowClassName = "",
+  selectAllLabelName = "Select All...",
 }) {
   let checkBoxArr = CheckBoxList.map((item) => ({
     ...item,
@@ -25,6 +26,7 @@ export function MultiSelectCheckBox({
               onChange(item);
             }}
             selectAllShowClassName={selectAllShowClassName}
+            selectAllLabelName={selectAllLabelName}
           />
         </div>
       )}

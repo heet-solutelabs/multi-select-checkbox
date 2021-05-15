@@ -12,6 +12,7 @@ export default function App() {
         selectAllShowClassName="Inside"
         listOfCheckBoxItemsClassName="test"
         CheckBoxList={CheckBoxList}
+        selectAllLabelName="Select All..."
         onChange={function (item) {
           //  get All list of selected Item....
           setSelectedValue(item);
