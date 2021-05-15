@@ -3,6 +3,7 @@ function SelectAllCheckBox({
   setSelectCheckBox = [],
   onChange,
   selectAllShowClassName,
+  selectAllLabelName,
 }) {
   return (
     <>
@@ -29,7 +30,7 @@ function SelectAllCheckBox({
                   };
                   return obj;
                 });
-                let arre = selectedAllCheckBox
+                let passOnChangeData = selectedAllCheckBox
                   .filter((item) => item.is_active)
                   .map(function (item) {
                     return {
@@ -37,7 +38,7 @@ function SelectAllCheckBox({
                     };
                   });
                 onChange(
-                  arre.map((item) => {
+                  passOnChangeData.map((item) => {
                     delete item.is_active;
                     return { ...item };
                   })
@@ -45,7 +46,7 @@ function SelectAllCheckBox({
                 setSelectCheckBox(selectedAllCheckBox);
               }}
             />
-            <label htmlFor="select_all_checkbox">select all</label>
+            <label htmlFor="select_all_checkbox">{selectAllLabelName}</label>
           </>
         )}
     </>
