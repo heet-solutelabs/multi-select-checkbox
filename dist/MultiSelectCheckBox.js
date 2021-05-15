@@ -36,12 +36,16 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 function MultiSelectCheckBox(_ref) {
   var _ref$CheckBoxList = _ref.CheckBoxList,
       CheckBoxList = _ref$CheckBoxList === void 0 ? [] : _ref$CheckBoxList,
-      _onChange = _ref.onChange,
+      _ref$onChange = _ref.onChange,
+      _onChange = _ref$onChange === void 0 ? function (item) {} : _ref$onChange,
       selectAllShow = _ref.selectAllShow,
       _ref$listOfCheckBoxIt = _ref.listOfCheckBoxItemsClassName,
       listOfCheckBoxItemsClassName = _ref$listOfCheckBoxIt === void 0 ? "" : _ref$listOfCheckBoxIt,
       _ref$selectAllShowCla = _ref.selectAllShowClassName,
-      selectAllShowClassName = _ref$selectAllShowCla === void 0 ? "" : _ref$selectAllShowCla;
+      selectAllShowClassName = _ref$selectAllShowCla === void 0 ? "" : _ref$selectAllShowCla,
+      _ref$selectAllLabelNa = _ref.selectAllLabelName,
+      selectAllLabelName = _ref$selectAllLabelNa === void 0 ? "Select All..." : _ref$selectAllLabelNa;
+
   var checkBoxArr = CheckBoxList.map(function (item) {
     return _objectSpread(_objectSpread({}, item), {}, {
       is_active: false
@@ -64,7 +68,8 @@ function MultiSelectCheckBox(_ref) {
         onChange: function onChange(item) {
           _onChange(item);
         },
-        selectAllShowClassName: selectAllShowClassName
+        selectAllShowClassName: selectAllShowClassName,
+        selectAllLabelName: selectAllLabelName
       })
     }), /*#__PURE__*/(0, _jsxRuntime.jsx)(_ListAllCheckBox.default, {
       listOfCheckBoxItemsClassName: listOfCheckBoxItemsClassName,

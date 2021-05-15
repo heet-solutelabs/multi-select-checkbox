@@ -41,6 +41,7 @@ function App() {
       selectAllShowClassName: "Inside",
       listOfCheckBoxItemsClassName: "test",
       CheckBoxList: _CheckBoxList.CheckBoxList,
+      selectAllLabelName: "Select All...",
       onChange: function onChange(item) {
         //  get All list of selected Item....
         setSelectedValue(item);
