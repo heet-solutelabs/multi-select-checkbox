@@ -15,6 +15,11 @@ export function MultiSelectCheckBox({
     is_active: false,
   }));
   const [selectCheckBox, setSelectCheckBox] = React.useState(checkBoxArr);
+
+  function onChangedData(item) {
+    onChange(item);
+  }
+
   return (
     <div>
       {selectAllShow && (
@@ -22,9 +27,7 @@ export function MultiSelectCheckBox({
           <SelectAllCheckBox
             selectCheckBox={selectCheckBox}
             setSelectCheckBox={setSelectCheckBox}
-            onChange={function (item) {
-              onChange(item);
-            }}
+            onChange={onChangedData}
             selectAllShowClassName={selectAllShowClassName}
             selectAllLabelName={selectAllLabelName}
           />
@@ -34,9 +37,7 @@ export function MultiSelectCheckBox({
         listOfCheckBoxItemsClassName={listOfCheckBoxItemsClassName}
         selectCheckBox={selectCheckBox}
         setSelectCheckBox={setSelectCheckBox}
-        onChange={function (item) {
-          onChange(item);
-        }}
+        onChange={onChangedData}
       />
     </div>
   );

@@ -16,11 +16,7 @@ function SelectAllCheckBox({
             <input
               id="select_all_checkbox"
               className={selectAllShowClassName}
-              checked={
-                Array.isArray(selectCheckBox) &&
-                selectCheckBox.length > 0 &&
-                selectCheckBox.every((item) => item.is_active === true)
-              }
+              checked={selectCheckBox.every((item) => item.is_active === true)}
               type="checkbox"
               onChange={(e) => {
                 let selectedAllCheckBox = selectCheckBox.map((item) => ({
