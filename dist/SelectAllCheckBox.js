@@ -32,7 +32,7 @@ function SelectAllCheckBox(_ref) {
       children: [/*#__PURE__*/(0, _jsxRuntime.jsx)("input", {
         id: "select_all_checkbox",
         className: selectAllShowClassName,
-        checked: Array.isArray(selectCheckBox) && selectCheckBox.length > 0 && selectCheckBox.every(function (item) {
+        checked: selectCheckBox.every(function (item) {
           return item.is_active === true;
         }),
         type: "checkbox",
