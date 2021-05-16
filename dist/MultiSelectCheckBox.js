@@ -37,7 +37,7 @@ function MultiSelectCheckBox(_ref) {
   var _ref$CheckBoxList = _ref.CheckBoxList,
       CheckBoxList = _ref$CheckBoxList === void 0 ? [] : _ref$CheckBoxList,
       _ref$onChange = _ref.onChange,
-      _onChange = _ref$onChange === void 0 ? function (item) {} : _ref$onChange,
+      onChange = _ref$onChange === void 0 ? function (item) {} : _ref$onChange,
       selectAllShow = _ref.selectAllShow,
       _ref$listOfCheckBoxIt = _ref.listOfCheckBoxItemsClassName,
       listOfCheckBoxItemsClassName = _ref$listOfCheckBoxIt === void 0 ? "" : _ref$listOfCheckBoxIt,
@@ -45,7 +45,6 @@ function MultiSelectCheckBox(_ref) {
       selectAllShowClassName = _ref$selectAllShowCla === void 0 ? "" : _ref$selectAllShowCla,
       _ref$selectAllLabelNa = _ref.selectAllLabelName,
       selectAllLabelName = _ref$selectAllLabelNa === void 0 ? "Select All..." : _ref$selectAllLabelNa;
-
   var checkBoxArr = CheckBoxList.map(function (item) {
     return _objectSpread(_objectSpread({}, item), {}, {
       is_active: false
@@ -57,6 +56,10 @@ function MultiSelectCheckBox(_ref) {
       selectCheckBox = _React$useState2[0],
       setSelectCheckBox = _React$useState2[1];
 
+  function onChangedData(item) {
+    onChange(item);
+  }
+
   return /*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
     children: [selectAllShow && /*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
       style: {
@@ -65,9 +68,7 @@ function MultiSelectCheckBox(_ref) {
       children: /*#__PURE__*/(0, _jsxRuntime.jsx)(_SelectAllCheckBox.default, {
         selectCheckBox: selectCheckBox,
         setSelectCheckBox: setSelectCheckBox,
-        onChange: function onChange(item) {
-          _onChange(item);
-        },
+        onChange: onChangedData,
         selectAllShowClassName: selectAllShowClassName,
         selectAllLabelName: selectAllLabelName
       })
@@ -75,9 +76,7 @@ function MultiSelectCheckBox(_ref) {
       listOfCheckBoxItemsClassName: listOfCheckBoxItemsClassName,
       selectCheckBox: selectCheckBox,
       setSelectCheckBox: setSelectCheckBox,
-      onChange: function onChange(item) {
-        _onChange(item);
-      }
+      onChange: onChangedData
     })]
   });
 }
