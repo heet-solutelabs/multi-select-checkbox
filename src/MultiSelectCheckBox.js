@@ -14,10 +14,13 @@ export function MultiSelectCheckBox({
   selectAllParentDivClassName = "",
   listOfAllCheckBoxParentDivClassName = "",
 }) {
-  let checkBoxArr = CheckBoxList.map((item) => ({
-    ...item,
-    is_active: false,
-  }));
+  let checkBoxArr =
+    Array.isArray(CheckBoxList) && CheckBoxList.length > 0
+      ? CheckBoxList.map((item) => ({
+          ...item,
+          is_active: false,
+        }))
+      : [];
   const [selectCheckBox, setSelectCheckBox] = React.useState(checkBoxArr);
 
   function onChangedData(item) {
