@@ -38,6 +38,8 @@ function App() {
       children: JSON.stringify(selectedValue, null, 2)
     }), /*#__PURE__*/(0, _jsxRuntime.jsx)(_MultiSelectCheckBox.MultiSelectCheckBox, {
       selectAllShow: true,
+      selectAllParentDivClassName: "selectAllParentDivClassName",
+      listOfAllCheckBoxParentDivClassName: "listOfAllCheckBoxParentDivClassName",
       selectAllShowClassName: "Inside",
       listOfCheckBoxItemsClassName: "test",
       CheckBoxList: _CheckBoxList.CheckBoxList,

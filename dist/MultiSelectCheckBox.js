@@ -44,7 +44,15 @@ function MultiSelectCheckBox(_ref) {
       _ref$selectAllShowCla = _ref.selectAllShowClassName,
       selectAllShowClassName = _ref$selectAllShowCla === void 0 ? "" : _ref$selectAllShowCla,
       _ref$selectAllLabelNa = _ref.selectAllLabelName,
-      selectAllLabelName = _ref$selectAllLabelNa === void 0 ? "Select All..." : _ref$selectAllLabelNa;
+      selectAllLabelName = _ref$selectAllLabelNa === void 0 ? "Select All..." : _ref$selectAllLabelNa,
+      _ref$selectAllClassLa = _ref.selectAllClassLabelName,
+      selectAllClassLabelName = _ref$selectAllClassLa === void 0 ? "" : _ref$selectAllClassLa,
+      _ref$listOfCheckBoxIt2 = _ref.listOfCheckBoxItemsLabelClassName,
+      listOfCheckBoxItemsLabelClassName = _ref$listOfCheckBoxIt2 === void 0 ? "" : _ref$listOfCheckBoxIt2,
+      _ref$selectAllParentD = _ref.selectAllParentDivClassName,
+      selectAllParentDivClassName = _ref$selectAllParentD === void 0 ? "" : _ref$selectAllParentD,
+      _ref$listOfAllCheckBo = _ref.listOfAllCheckBoxParentDivClassName,
+      listOfAllCheckBoxParentDivClassName = _ref$listOfAllCheckBo === void 0 ? "" : _ref$listOfAllCheckBo;
   var checkBoxArr = CheckBoxList.map(function (item) {
     return _objectSpread(_objectSpread({}, item), {}, {
       is_active: false
@@ -60,20 +68,19 @@ function MultiSelectCheckBox(_ref) {
     onChange(item);
   }
 
-  return /*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
-    children: [selectAllShow && /*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
-      style: {
-        marginBottom: "10px"
-      },
-      children: /*#__PURE__*/(0, _jsxRuntime.jsx)(_SelectAllCheckBox.default, {
-        selectCheckBox: selectCheckBox,
-        setSelectCheckBox: setSelectCheckBox,
-        onChange: onChangedData,
-        selectAllShowClassName: selectAllShowClassName,
-        selectAllLabelName: selectAllLabelName
-      })
+  return /*#__PURE__*/(0, _jsxRuntime.jsxs)(_jsxRuntime.Fragment, {
+    children: [selectAllShow && /*#__PURE__*/(0, _jsxRuntime.jsx)(_SelectAllCheckBox.default, {
+      selectCheckBox: selectCheckBox,
+      setSelectCheckBox: setSelectCheckBox,
+      onChange: onChangedData,
+      selectAllShowClassName: selectAllShowClassName,
+      selectAllLabelName: selectAllLabelName,
+      selectAllClassLabelName: selectAllClassLabelName,
+      selectAllParentDivClassName: selectAllParentDivClassName
     }), /*#__PURE__*/(0, _jsxRuntime.jsx)(_ListAllCheckBox.default, {
+      listOfAllCheckBoxParentDivClassName: listOfAllCheckBoxParentDivClassName,
       listOfCheckBoxItemsClassName: listOfCheckBoxItemsClassName,
+      listOfCheckBoxItemsLabelClassName: listOfCheckBoxItemsLabelClassName,
       selectCheckBox: selectCheckBox,
       setSelectCheckBox: setSelectCheckBox,
       onChange: onChangedData
