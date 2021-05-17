@@ -53,11 +53,11 @@ function MultiSelectCheckBox(_ref) {
       selectAllParentDivClassName = _ref$selectAllParentD === void 0 ? "" : _ref$selectAllParentD,
       _ref$listOfAllCheckBo = _ref.listOfAllCheckBoxParentDivClassName,
       listOfAllCheckBoxParentDivClassName = _ref$listOfAllCheckBo === void 0 ? "" : _ref$listOfAllCheckBo;
-  var checkBoxArr = CheckBoxList.map(function (item) {
+  var checkBoxArr = Array.isArray(CheckBoxList) && CheckBoxList.length > 0 ? CheckBoxList.map(function (item) {
     return _objectSpread(_objectSpread({}, item), {}, {
       is_active: false
     });
-  });
+  }) : [];
 
   var _React$useState = _react.default.useState(checkBoxArr),
       _React$useState2 = _slicedToArray(_React$useState, 2),
