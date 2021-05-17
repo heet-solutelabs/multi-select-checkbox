@@ -5,6 +5,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
+var _react = _interopRequireDefault(require("react"));
+
 var _PassOnChangeDataFun = _interopRequireDefault(require("./utils/PassOnChangeDataFun"));
 
 var _jsxRuntime = require("react/jsx-runtime");
@@ -22,15 +24,14 @@ function ListAllCheckBox(_ref) {
       selectCheckBox = _ref$selectCheckBox === void 0 ? [] : _ref$selectCheckBox,
       setSelectCheckBox = _ref.setSelectCheckBox,
       _onChange = _ref.onChange,
-      listOfCheckBoxItemsClassName = _ref.listOfCheckBoxItemsClassName;
+      listOfCheckBoxItemsClassName = _ref.listOfCheckBoxItemsClassName,
+      listOfCheckBoxItemsLabelClassName = _ref.listOfCheckBoxItemsLabelClassName,
+      listOfAllCheckBoxParentDivClassName = _ref.listOfAllCheckBoxParentDivClassName;
   return /*#__PURE__*/(0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
     children: Array.isArray(selectCheckBox) && selectCheckBox.length > 0 && selectCheckBox.map(function (item, index) {
       return /*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
-        children: item.label && item.value && /*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
-          className: "flex",
-          style: {
-            marginBottom: "10px"
-          },
+        className: listOfAllCheckBoxParentDivClassName,
+        children: item.label && item.value && /*#__PURE__*/(0, _jsxRuntime.jsxs)(_react.default.Fragment, {
           children: [/*#__PURE__*/(0, _jsxRuntime.jsx)("input", {
             id: index,
             className: listOfCheckBoxItemsClassName,
@@ -53,6 +54,7 @@ function ListAllCheckBox(_ref) {
             }
           }), /*#__PURE__*/(0, _jsxRuntime.jsx)("label", {
             htmlFor: index,
+            className: listOfCheckBoxItemsLabelClassName,
             children: item.label
           })]
         })

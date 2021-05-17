@@ -9,6 +9,10 @@ export function MultiSelectCheckBox({
   listOfCheckBoxItemsClassName = "",
   selectAllShowClassName = "",
   selectAllLabelName = "Select All...",
+  selectAllClassLabelName = "",
+  listOfCheckBoxItemsLabelClassName = "",
+  selectAllParentDivClassName = "",
+  listOfAllCheckBoxParentDivClassName = "",
 }) {
   let checkBoxArr = CheckBoxList.map((item) => ({
     ...item,
@@ -21,24 +25,28 @@ export function MultiSelectCheckBox({
   }
 
   return (
-    <div>
+    <>
       {selectAllShow && (
-        <div style={{ marginBottom: "10px" }}>
-          <SelectAllCheckBox
-            selectCheckBox={selectCheckBox}
-            setSelectCheckBox={setSelectCheckBox}
-            onChange={onChangedData}
-            selectAllShowClassName={selectAllShowClassName}
-            selectAllLabelName={selectAllLabelName}
-          />
-        </div>
+        <SelectAllCheckBox
+          selectCheckBox={selectCheckBox}
+          setSelectCheckBox={setSelectCheckBox}
+          onChange={onChangedData}
+          selectAllShowClassName={selectAllShowClassName}
+          selectAllLabelName={selectAllLabelName}
+          selectAllClassLabelName={selectAllClassLabelName}
+          selectAllParentDivClassName={selectAllParentDivClassName}
+        />
       )}
       <ListAllCheckBox
+        listOfAllCheckBoxParentDivClassName={
+          listOfAllCheckBoxParentDivClassName
+        }
         listOfCheckBoxItemsClassName={listOfCheckBoxItemsClassName}
+        listOfCheckBoxItemsLabelClassName={listOfCheckBoxItemsLabelClassName}
         selectCheckBox={selectCheckBox}
         setSelectCheckBox={setSelectCheckBox}
         onChange={onChangedData}
       />
-    </div>
+    </>
   );
 }

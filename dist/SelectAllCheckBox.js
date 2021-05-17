@@ -24,11 +24,14 @@ function SelectAllCheckBox(_ref) {
       setSelectCheckBox = _ref$setSelectCheckBo === void 0 ? [] : _ref$setSelectCheckBo,
       _onChange = _ref.onChange,
       selectAllShowClassName = _ref.selectAllShowClassName,
-      selectAllLabelName = _ref.selectAllLabelName;
+      selectAllLabelName = _ref.selectAllLabelName,
+      selectAllClassLabelName = _ref.selectAllClassLabelName,
+      selectAllParentDivClassName = _ref.selectAllParentDivClassName;
   return /*#__PURE__*/(0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
     children: Array.isArray(selectCheckBox) && selectCheckBox.length > 0 && selectCheckBox.some(function (item) {
       return item.label && item.value;
-    }) && /*#__PURE__*/(0, _jsxRuntime.jsxs)(_jsxRuntime.Fragment, {
+    }) && /*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
+      className: selectAllParentDivClassName,
       children: [/*#__PURE__*/(0, _jsxRuntime.jsx)("input", {
         id: "select_all_checkbox",
         className: selectAllShowClassName,
@@ -49,6 +52,7 @@ function SelectAllCheckBox(_ref) {
         }
       }), /*#__PURE__*/(0, _jsxRuntime.jsx)("label", {
         htmlFor: "select_all_checkbox",
+        className: selectAllClassLabelName,
         children: selectAllLabelName
       })]
     })

@@ -6,13 +6,15 @@ function SelectAllCheckBox({
   onChange,
   selectAllShowClassName,
   selectAllLabelName,
+  selectAllClassLabelName,
+  selectAllParentDivClassName,
 }) {
   return (
     <>
       {Array.isArray(selectCheckBox) &&
         selectCheckBox.length > 0 &&
         selectCheckBox.some((item) => item.label && item.value) && (
-          <>
+          <div className={selectAllParentDivClassName}>
             <input
               id="select_all_checkbox"
               className={selectAllShowClassName}
@@ -27,8 +29,13 @@ function SelectAllCheckBox({
                 setSelectCheckBox(selectedAllCheckBox);
               }}
             />
-            <label htmlFor="select_all_checkbox">{selectAllLabelName}</label>
-          </>
+            <label
+              htmlFor="select_all_checkbox"
+              className={selectAllClassLabelName}
+            >
+              {selectAllLabelName}
+            </label>
+          </div>
         )}
     </>
   );

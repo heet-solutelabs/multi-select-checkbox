@@ -1,3 +1,4 @@
+import React from "react";
 import PassOnChangeDataFun from "./utils/PassOnChangeDataFun";
 
 function ListAllCheckBox({
@@ -5,15 +6,17 @@ function ListAllCheckBox({
   setSelectCheckBox,
   onChange,
   listOfCheckBoxItemsClassName,
+  listOfCheckBoxItemsLabelClassName,
+  listOfAllCheckBoxParentDivClassName,
 }) {
   return (
     <>
       {Array.isArray(selectCheckBox) &&
         selectCheckBox.length > 0 &&
         selectCheckBox.map((item, index) => (
-          <div key={index}>
+          <div className={listOfAllCheckBoxParentDivClassName} key={index}>
             {item.label && item.value && (
-              <div className="flex" style={{ marginBottom: "10px" }}>
+              <React.Fragment>
                 <input
                   id={index}
                   className={listOfCheckBoxItemsClassName}
@@ -37,8 +40,13 @@ function ListAllCheckBox({
                     setSelectCheckBox(selectedCheckBox);
                   }}
                 />
-                <label htmlFor={index}>{item.label}</label>
-              </div>
+                <label
+                  htmlFor={index}
+                  className={listOfCheckBoxItemsLabelClassName}
+                >
+                  {item.label}
+                </label>
+              </React.Fragment>
             )}
           </div>
         ))}
