@@ -3,7 +3,6 @@
   "version": "0.3.5",
   "description": "React Boilerplate Component for npm",
   "main": "./src/MultiSelectCheckBox.js",
-  "license": "MIT",
   "dependencies": {
     "@babel/cli": "^7.10.5",
     "@babel/core": "^7.10.5",
@@ -18,6 +17,10 @@
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
     "web-vitals": "^1.0.1"
+  },
+  "author": {
+    "name": "heet_gosaliya",
+    "email": "heet.g@solutelabs.com"
   },
   "babel": {
     "presets": [
