@@ -1,6 +1,9 @@
 {
   "name": "@heet-solutelabs/multi-select-checkbox",
-  "version": "0.3.4",
+  "version": "0.3.5",
+  "description": "React Boilerplate Component for npm",
+  "main": "./src/MultiSelectCheckBox.js",
+  "license": "MIT",
   "dependencies": {
     "@babel/cli": "^7.10.5",
     "@babel/core": "^7.10.5",
