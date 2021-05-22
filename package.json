@@ -1,20 +1,11 @@
 {
-  "name": "@heet-solutelabs/multi-select-checkbox",
-  "version": "0.3.4",
-  "dependencies": {
-    "@babel/cli": "^7.10.5",
-    "@babel/core": "^7.10.5",
-    "@babel/plugin-proposal-class-properties": "^7.10.4",
-    "@babel/plugin-syntax-jsx": "^7.12.13",
-    "@babel/preset-env": "^7.10.4",
-    "@babel/preset-react": "^7.10.4",
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-scripts": "4.0.3",
-    "web-vitals": "^1.0.1"
+  "name": "multi-select-checkbox",
+  "version": "0.5.2",
+  "description": "Multi Select CheckBox",
+  "main": "./dist/MultiSelectCheckBox.js",
+  "author": {
+    "name": "heet_gosaliya",
+    "email": "heet.g@solutelabs.com"
   },
   "babel": {
     "presets": [
@@ -40,10 +31,14 @@
       "react-app/jest"
     ]
   },
-  "repository": {
-    "url": "https://github.com/heet-solutelabs/multi-select-checkbox.git"
-  },
   "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/plugin-syntax-jsx": "^7.12.13",
+    "@babel/preset-env": "^7.10.4",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "web-vitals": "^1.0.1",
     "@babel/cli": "^7.11.6",
     "@babel/core": "^7.11.6",
     "@babel/plugin-transform-modules-commonjs": "^7.10.4",
