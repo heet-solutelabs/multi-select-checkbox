@@ -5,6 +5,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
+var _react = _interopRequireDefault(require("react"));
+
 var _PassOnChangeDataFun = _interopRequireDefault(require("./utils/PassOnChangeDataFun"));
 
 var _jsxRuntime = require("react/jsx-runtime");
