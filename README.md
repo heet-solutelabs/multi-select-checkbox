@@ -5,6 +5,7 @@
 ```
 yarn add multi-select-checkbox
 ```
+
 Then use it in your app:
 
 #### With React Component
@@ -47,12 +48,18 @@ function App() {
       <p>{JSON.stringify(selectedValue, null, 2)}</p>
       <MultiSelectCheckBox
         selectAllShow={true}
-        selectAllClassLabelName=""
-        listOfCheckBoxItemsLabelClassName=""
+        selectedCheckBox={[
+          {
+            label: "eat",
+            value: "eat",
+          },
+        ]}
+        selectAllClassLabelName="select_all_label_class_name"
+        listOfCheckBoxItemsLabelClassName="list_of_checkbox_item_label_class_name"
         selectAllParentDivClassName="selectAllParentDivClassName"
         listOfAllCheckBoxParentDivClassName="listOfAllCheckBoxParentDivClassName"
-        selectAllShowClassName="Inside"
-        listOfCheckBoxItemsClassName="test"
+        selectAllShowClassName="select_all_checkbox_classname"
+        listOfCheckBoxItemsClassName="list_of_all_checkbox_classname"
         CheckBoxList={CheckBoxList}
         selectAllLabelName="Select All..."
         onChange={function (item) {
@@ -65,7 +72,6 @@ function App() {
 }
 
 export default App;
-
 ```
 
 ## Props
@@ -73,6 +79,7 @@ export default App;
 Common props you may want to specify include:
 
 - `selectAllShow` - show select all option
+- `selectedCheckBox` - show already selected checkbox
 - `selectAllClassLabelName` - apply a className to the select all label tag
 - `selectAllParentDivClassName` - apply classNames to select all div tag,which contains select all checkbox field and label
 - `selectAllShowClassName` - apply a className to the select all checkbox
@@ -80,7 +87,5 @@ Common props you may want to specify include:
 - `listOfCheckBoxItemsLabelClassName` - apply a className to the list of checkbox items label
 - `listOfAllCheckBoxParentDivClassName` - apply classNames to list of checkbox items div tag,which contains list of checkbox field and label
 - `listOfCheckBoxItemsClassName` - apply a className to the list of checkboxes
-- `CheckBoxList` - need to pass an array of an objects , to show list of all checkbox items 
+- `CheckBoxList` - need to pass an array of an objects , to show list of all checkbox items
 - `onChange` - get All list of selected Item
-
-

@@ -2,9 +2,9 @@ import React from "react";
 import SelectAllCheckBox from "./SelectAllCheckBox";
 import ListAllCheckBox from "./ListAllCheckBox";
 
-function checkedSelectedOption(CheckBoxList, selectedOption) {
+function checkedSelectedOption(CheckBoxList, selectedCheckBox) {
   return CheckBoxList.map((item) => {
-    for (let option of selectedOption) {
+    for (let option of selectedCheckBox) {
       if (Object.is(option.label, item.label)) {
         return {
           ...item,
@@ -24,18 +24,18 @@ function listOfAllCheckBox(CheckBoxList) {
     is_active: false,
   }));
 }
-function assignOption(CheckBoxList, selectedOption) {
+function assignOption(CheckBoxList, selectedCheckBox) {
   if (
     Array.isArray(CheckBoxList) &&
     CheckBoxList.length > 0 &&
     CheckBoxList.every((item) => "label" in item && "value" in item)
   ) {
     if (
-      Array.isArray(selectedOption) &&
-      selectedOption.length > 0 &&
-      selectedOption.every((item) => "label" in item && "value" in item)
+      Array.isArray(selectedCheckBox) &&
+      selectedCheckBox.length > 0 &&
+      selectedCheckBox.every((item) => "label" in item && "value" in item)
     ) {
-      return checkedSelectedOption(CheckBoxList, selectedOption);
+      return checkedSelectedOption(CheckBoxList, selectedCheckBox);
     } else {
       return listOfAllCheckBox(CheckBoxList);
     }
@@ -55,9 +55,9 @@ export function MultiSelectCheckBox({
   listOfCheckBoxItemsLabelClassName = "",
   selectAllParentDivClassName = "",
   listOfAllCheckBoxParentDivClassName = "",
-  selectedOption = [],
+  selectedCheckBox = [],
 }) {
-  let checkBoxArr = assignOption(CheckBoxList, selectedOption);
+  let checkBoxArr = assignOption(CheckBoxList, selectedCheckBox);
   const [selectCheckBox, setSelectCheckBox] = React.useState(checkBoxArr);
   function onChangedData(item) {
     onChange(item);
