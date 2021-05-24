@@ -2,10 +2,6 @@
   "name": "multi-select-checkbox",
   "version": "0.5.5",
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/heet-solutelabs/multi-select-checkbox.git"
-  },
   "description": "Multi Select CheckBox",
   "main": "./dist/MultiSelectCheckBox.js",
   "author": {
