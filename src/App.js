@@ -9,6 +9,12 @@ export default function App() {
       <p>{JSON.stringify(selectedValue, null, 2)}</p>
       <MultiSelectCheckBox
         selectAllShow={true}
+        selectedOption={[
+          {
+            label: "eat",
+            value: "eat",
+          },
+        ]}
         selectAllClassLabelName=""
         listOfCheckBoxItemsLabelClassName=""
         selectAllParentDivClassName="selectAllParentDivClassName"
