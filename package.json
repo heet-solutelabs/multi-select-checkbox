@@ -1,6 +1,6 @@
 {
   "name": "multi-select-checkbox",
-  "version": "1.0.1",
+  "version": "1.0.5",
   "license": "MIT",
   "description": "Multi Select CheckBox",
   "main": "./dist/MultiSelectCheckBox.js",
