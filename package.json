@@ -1,6 +1,6 @@
 {
   "name": "multi-select-checkbox",
-  "version": "1.0.5",
+  "version": "1.0.8",
   "license": "MIT",
   "description": "Multi Select CheckBox",
   "main": "./dist/MultiSelectCheckBox.js",
@@ -53,6 +53,10 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3"
   },
+  "keywords": [
+    "react",
+    "multi-select-checkbox"
+  ],
   "browserslist": {
     "production": [
       ">0.2%",
