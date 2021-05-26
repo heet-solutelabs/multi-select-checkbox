@@ -89,3 +89,7 @@ Common props you may want to specify include:
 - `listOfCheckBoxItemsClassName` - apply a className to the list of checkboxes
 - `CheckBoxList` - need to pass an array of an objects , to show list of all checkbox items
 - `onChange` - get All list of selected Item
+
+### Contributor
+
+- [Heet Gosaliya](https://github.com/heet-solutelabs)
