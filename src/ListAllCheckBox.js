@@ -2,18 +2,20 @@ import React from "react";
 import PassOnChangeDataFun from "./utils/PassOnChangeDataFun";
 
 function ListAllCheckBox({
-  selectCheckBox = [],
-  setSelectCheckBox,
+  viewCheckBox = [],
   onChange,
   listOfCheckBoxItemsClassName,
   listOfCheckBoxItemsLabelClassName,
   listOfAllCheckBoxParentDivClassName,
+  setSelectCheckBox,
+  selectCheckBox,
 }) {
   return (
     <>
-      {Array.isArray(selectCheckBox) &&
-        selectCheckBox.length > 0 &&
-        selectCheckBox.map((item, index) => (
+      {Array.isArray(viewCheckBox) &&
+        viewCheckBox.length > 0 &&
+        viewCheckBox.every((item) => "label" in item && "value" in item) &&
+        viewCheckBox.map((item, index) => (
           <div className={listOfAllCheckBoxParentDivClassName} key={index}>
             {item.label && item.value && (
               <React.Fragment>
@@ -21,7 +23,11 @@ function ListAllCheckBox({
                   id={index}
                   className={listOfCheckBoxItemsClassName}
                   type="checkbox"
-                  checked={item?.is_active}
+                  checked={
+                    selectCheckBox.find((items) => {
+                      return items.label === item.label;
+                    }).is_active
+                  }
                   onChange={(e) => {
                     let selectedCheckBox = selectCheckBox.map(
                       (current_item) => {
@@ -54,4 +60,4 @@ function ListAllCheckBox({
   );
 }
 
-export default ListAllCheckBox;
+export default React.memo(ListAllCheckBox);

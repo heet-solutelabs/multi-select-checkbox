@@ -4,6 +4,7 @@ import { CheckBoxList } from "./CheckBoxList";
 
 export default function App() {
   const [selectedValue, setSelectedValue] = React.useState([]);
+
   return (
     <>
       <p>{JSON.stringify(selectedValue, null, 2)}</p>
@@ -15,6 +16,10 @@ export default function App() {
             value: "eat",
           },
         ]}
+        searchFilterParentDivClassName="searchFilterParentDivClassName"
+        searchFilterClassName="searchFilterClassName"
+        searchPlaceHolderName="Search Here..."
+        showSearchBox={true}
         selectAllClassLabelName="select_all_label_class_name"
         listOfCheckBoxItemsLabelClassName="list_of_checkbox_item_label_class_name"
         selectAllParentDivClassName="selectAllParentDivClassName"

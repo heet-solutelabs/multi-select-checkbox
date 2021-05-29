@@ -42,6 +42,10 @@ function App() {
         label: "eat",
         value: "eat"
       }],
+      searchFilterParentDivClassName: "searchFilterParentDivClassName",
+      searchFilterClassName: "searchFilterClassName",
+      searchPlaceHolderName: "Search Here...",
+      showSearchBox: true,
       selectAllClassLabelName: "select_all_label_class_name",
       listOfCheckBoxItemsLabelClassName: "list_of_checkbox_item_label_class_name",
       selectAllParentDivClassName: "selectAllParentDivClassName",

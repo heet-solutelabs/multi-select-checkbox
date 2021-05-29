@@ -1,50 +1,14 @@
 import React from "react";
+import { assignOption } from "./utils/DisplayOptions";
 import SelectAllCheckBox from "./SelectAllCheckBox";
 import ListAllCheckBox from "./ListAllCheckBox";
-
-function checkedSelectedOption(CheckBoxList, selectedCheckBox) {
-  return CheckBoxList.map((item) => {
-    for (let option of selectedCheckBox) {
-      if (Object.is(option.label, item.label)) {
-        return {
-          ...item,
-          is_active: true,
-        };
-      }
-    }
-    return {
-      ...item,
-      is_active: false,
-    };
-  });
-}
-function listOfAllCheckBox(CheckBoxList) {
-  return CheckBoxList.map((item) => ({
-    ...item,
-    is_active: false,
-  }));
-}
-function assignOption(CheckBoxList, selectedCheckBox) {
-  if (
-    Array.isArray(CheckBoxList) &&
-    CheckBoxList.length > 0 &&
-    CheckBoxList.every((item) => "label" in item && "value" in item)
-  ) {
-    if (
-      Array.isArray(selectedCheckBox) &&
-      selectedCheckBox.length > 0 &&
-      selectedCheckBox.every((item) => "label" in item && "value" in item)
-    ) {
-      return checkedSelectedOption(CheckBoxList, selectedCheckBox);
-    } else {
-      return listOfAllCheckBox(CheckBoxList);
-    }
-  } else {
-    return [];
-  }
-}
+import SearchFilter from "./SearchFilter";
 
 export function MultiSelectCheckBox({
+  searchFilterParentDivClassName = "",
+  searchFilterClassName = "",
+  searchPlaceHolderName = "",
+  showSearchBox = true,
   CheckBoxList = [],
   onChange = function (item) {},
   selectAllShow,
@@ -58,33 +22,59 @@ export function MultiSelectCheckBox({
   selectedCheckBox = [],
 }) {
   let checkBoxArr = assignOption(CheckBoxList, selectedCheckBox);
+  const [viewCheckBox, setViewCheckBox] = React.useState(CheckBoxList);
   const [selectCheckBox, setSelectCheckBox] = React.useState(checkBoxArr);
+  const [searchTerm, setSearchTerm] = React.useState("");
   function onChangedData(item) {
     onChange(item);
   }
 
+  React.useEffect(() => {
+    if (searchTerm && searchTerm.length > 0) {
+      let arr = selectCheckBox.filter((findSearchValue) => {
+        return findSearchValue.value
+          .toLowerCase()
+          .trim()
+          .includes(searchTerm.toLowerCase().trim());
+      });
+      setViewCheckBox(arr);
+    } else {
+      setViewCheckBox(selectCheckBox);
+    }
+  }, [searchTerm, selectCheckBox]);
   return (
     <>
-      {selectAllShow && (
+      {showSearchBox && (
+        <SearchFilter
+          searchTerm={searchTerm}
+          setSearchTerm={setSearchTerm}
+          searchFilterClassName={searchFilterClassName}
+          searchPlaceHolderName={searchPlaceHolderName}
+          searchFilterParentDivClassName={searchFilterParentDivClassName}
+        />
+      )}
+      {selectAllShow && searchTerm.length === 0 && (
         <SelectAllCheckBox
-          selectCheckBox={selectCheckBox}
-          setSelectCheckBox={setSelectCheckBox}
+          viewCheckBox={viewCheckBox}
           onChange={onChangedData}
           selectAllShowClassName={selectAllShowClassName}
           selectAllLabelName={selectAllLabelName}
           selectAllClassLabelName={selectAllClassLabelName}
           selectAllParentDivClassName={selectAllParentDivClassName}
+          setSelectCheckBox={setSelectCheckBox}
+          selectCheckBox={selectCheckBox}
         />
       )}
       <ListAllCheckBox
         listOfAllCheckBoxParentDivClassName={
           listOfAllCheckBoxParentDivClassName
         }
+        selectCheckBox={selectCheckBox}
         listOfCheckBoxItemsClassName={listOfCheckBoxItemsClassName}
         listOfCheckBoxItemsLabelClassName={listOfCheckBoxItemsLabelClassName}
-        selectCheckBox={selectCheckBox}
-        setSelectCheckBox={setSelectCheckBox}
+        viewCheckBox={viewCheckBox}
         onChange={onChangedData}
+        setSelectCheckBox={setSelectCheckBox}
       />
     </>
   );
