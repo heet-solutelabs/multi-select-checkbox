@@ -54,6 +54,10 @@ function App() {
             value: "eat",
           },
         ]}
+        searchFilterParentDivClassName="searchFilterParentDivClassName"
+        searchFilterClassName="searchFilterClassName"
+        searchPlaceHolderName="Search Here..."
+        showSearchBox={true}
         selectAllClassLabelName="select_all_label_class_name"
         listOfCheckBoxItemsLabelClassName="list_of_checkbox_item_label_class_name"
         selectAllParentDivClassName="selectAllParentDivClassName"
@@ -89,6 +93,10 @@ Common props you may want to specify include:
 - `listOfCheckBoxItemsClassName` - apply a className to the list of checkboxes
 - `CheckBoxList` - need to pass an array of an objects , to show list of all checkbox items
 - `onChange` - get All list of selected Item
+- `searchFilterParentDivClassName` - search box parent div class name
+- `searchFilterClassName` - search box class name
+- `searchPlaceHolderName` - search box placeholder name
+- `showSearchBox` - show search box , by default it will be true
 
 ### Contributor
 

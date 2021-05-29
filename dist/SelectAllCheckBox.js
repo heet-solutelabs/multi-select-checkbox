@@ -20,17 +20,17 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function SelectAllCheckBox(_ref) {
-  var _ref$selectCheckBox = _ref.selectCheckBox,
-      selectCheckBox = _ref$selectCheckBox === void 0 ? [] : _ref$selectCheckBox,
-      _ref$setSelectCheckBo = _ref.setSelectCheckBox,
-      setSelectCheckBox = _ref$setSelectCheckBo === void 0 ? [] : _ref$setSelectCheckBo,
+  var _ref$viewCheckBox = _ref.viewCheckBox,
+      viewCheckBox = _ref$viewCheckBox === void 0 ? [] : _ref$viewCheckBox,
       _onChange = _ref.onChange,
       selectAllShowClassName = _ref.selectAllShowClassName,
       selectAllLabelName = _ref.selectAllLabelName,
       selectAllClassLabelName = _ref.selectAllClassLabelName,
-      selectAllParentDivClassName = _ref.selectAllParentDivClassName;
+      selectAllParentDivClassName = _ref.selectAllParentDivClassName,
+      setSelectCheckBox = _ref.setSelectCheckBox,
+      selectCheckBox = _ref.selectCheckBox;
   return /*#__PURE__*/(0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
-    children: Array.isArray(selectCheckBox) && selectCheckBox.length > 0 && selectCheckBox.some(function (item) {
+    children: Array.isArray(viewCheckBox) && viewCheckBox.length > 0 && viewCheckBox.some(function (item) {
       return item.label && item.value;
     }) && /*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
       className: selectAllParentDivClassName,
@@ -61,5 +61,6 @@ function SelectAllCheckBox(_ref) {
   });
 }
 
-var _default = SelectAllCheckBox;
+var _default = /*#__PURE__*/_react.default.memo(SelectAllCheckBox);
+
 exports.default = _default;
