@@ -97,7 +97,3 @@ Common props you may want to specify include:
 - `searchFilterClassName` - search box class name
 - `searchPlaceHolderName` - search box placeholder name
 - `showSearchBox` - show search box , by default it will be true
-
-### Contributor
-
-- [Heet Gosaliya](https://github.com/heet-solutelabs)
