@@ -20,15 +20,18 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function ListAllCheckBox(_ref) {
-  var _ref$selectCheckBox = _ref.selectCheckBox,
-      selectCheckBox = _ref$selectCheckBox === void 0 ? [] : _ref$selectCheckBox,
-      setSelectCheckBox = _ref.setSelectCheckBox,
+  var _ref$viewCheckBox = _ref.viewCheckBox,
+      viewCheckBox = _ref$viewCheckBox === void 0 ? [] : _ref$viewCheckBox,
       _onChange = _ref.onChange,
       listOfCheckBoxItemsClassName = _ref.listOfCheckBoxItemsClassName,
       listOfCheckBoxItemsLabelClassName = _ref.listOfCheckBoxItemsLabelClassName,
-      listOfAllCheckBoxParentDivClassName = _ref.listOfAllCheckBoxParentDivClassName;
+      listOfAllCheckBoxParentDivClassName = _ref.listOfAllCheckBoxParentDivClassName,
+      setSelectCheckBox = _ref.setSelectCheckBox,
+      selectCheckBox = _ref.selectCheckBox;
   return /*#__PURE__*/(0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
-    children: Array.isArray(selectCheckBox) && selectCheckBox.length > 0 && selectCheckBox.map(function (item, index) {
+    children: Array.isArray(viewCheckBox) && viewCheckBox.length > 0 && viewCheckBox.every(function (item) {
+      return "label" in item && "value" in item;
+    }) && viewCheckBox.map(function (item, index) {
       return /*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
         className: listOfAllCheckBoxParentDivClassName,
         children: item.label && item.value && /*#__PURE__*/(0, _jsxRuntime.jsxs)(_react.default.Fragment, {
@@ -36,7 +39,9 @@ function ListAllCheckBox(_ref) {
             id: index,
             className: listOfCheckBoxItemsClassName,
             type: "checkbox",
-            checked: item === null || item === void 0 ? void 0 : item.is_active,
+            checked: selectCheckBox.find(function (items) {
+              return items.label === item.label;
+            }).is_active,
             onChange: function onChange(e) {
               var selectedCheckBox = selectCheckBox.map(function (current_item) {
                 if (Object.is(current_item.label, item.label)) {
@@ -63,5 +68,6 @@ function ListAllCheckBox(_ref) {
   });
 }
 
-var _default = ListAllCheckBox;
+var _default = /*#__PURE__*/_react.default.memo(ListAllCheckBox);
+
 exports.default = _default;

@@ -2,19 +2,20 @@ import React from "react";
 import PassOnChangeDataFun from "./utils/PassOnChangeDataFun";
 
 function SelectAllCheckBox({
-  selectCheckBox = [],
-  setSelectCheckBox = [],
+  viewCheckBox = [],
   onChange,
   selectAllShowClassName,
   selectAllLabelName,
   selectAllClassLabelName,
   selectAllParentDivClassName,
+  setSelectCheckBox,
+  selectCheckBox,
 }) {
   return (
     <>
-      {Array.isArray(selectCheckBox) &&
-        selectCheckBox.length > 0 &&
-        selectCheckBox.some((item) => item.label && item.value) && (
+      {Array.isArray(viewCheckBox) &&
+        viewCheckBox.length > 0 &&
+        viewCheckBox.some((item) => item.label && item.value) && (
           <div className={selectAllParentDivClassName}>
             <input
               id="select_all_checkbox"
@@ -42,4 +43,4 @@ function SelectAllCheckBox({
   );
 }
 
-export default SelectAllCheckBox;
+export default React.memo(SelectAllCheckBox);
