@@ -63,6 +63,8 @@ function App() {
             value: "eat",
           },
         ]}
+        searchLabelName="Search : "
+        searchLabelClassName="searchLabelClassName"
         searchFilterParentDivClassName="searchFilterParentDivClassName"
         searchFilterClassName="searchFilterClassName"
         searchPlaceHolderName="Search Here..."
@@ -106,3 +108,5 @@ Common props you may want to specify include:
 - `searchFilterClassName` - search box class name
 - `searchPlaceHolderName` - search box placeholder name
 - `showSearchBox` - show search box , by default it will be true
+- `searchLabelName` - search label name
+- `searchLabelClassName` - search label class name
