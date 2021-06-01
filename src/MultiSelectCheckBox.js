@@ -5,6 +5,8 @@ import ListAllCheckBox from "./ListAllCheckBox";
 import SearchFilter from "./SearchFilter";
 
 export function MultiSelectCheckBox({
+  searchLabelClassName = "",
+  searchLabelName = "",
   searchFilterParentDivClassName = "",
   searchFilterClassName = "",
   searchPlaceHolderName = "",
@@ -46,6 +48,9 @@ export function MultiSelectCheckBox({
     <>
       {showSearchBox && (
         <SearchFilter
+          viewCheckBox={viewCheckBox}
+          searchLabelClassName={searchLabelClassName}
+          searchLabelName={searchLabelName}
           searchTerm={searchTerm}
           setSearchTerm={setSearchTerm}
           searchFilterClassName={searchFilterClassName}

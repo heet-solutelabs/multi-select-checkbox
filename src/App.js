@@ -17,6 +17,8 @@ export default function App() {
           },
         ]}
         searchFilterParentDivClassName="searchFilterParentDivClassName"
+        searchLabelName="Search : "
+        searchLabelClassName="searchLabelClassName"
         searchFilterClassName="searchFilterClassName"
         searchPlaceHolderName="Search Here..."
         showSearchBox={true}
