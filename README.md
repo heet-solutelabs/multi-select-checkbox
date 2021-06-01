@@ -1,9 +1,18 @@
 # MultiSelectCheckBox
 
+Simple and lightweight multiple selection component with checkboxes, search and select-all
+
+## ✨ Features
+
+- Select All Checkbox Field
+- Search Box for searching list of checkbox items
+- Zero Dependency
+
 # Installation and usage
 
 ```
 yarn add multi-select-checkbox
+npm i multi-select-checkbox
 ```
 
 Then use it in your app:
