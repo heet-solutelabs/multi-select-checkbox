@@ -43,6 +43,8 @@ function App() {
         value: "eat"
       }],
       searchFilterParentDivClassName: "searchFilterParentDivClassName",
+      searchLabelName: "Search : ",
+      searchLabelClassName: "searchLabelClassName",
       searchFilterClassName: "searchFilterClassName",
       searchPlaceHolderName: "Search Here...",
       showSearchBox: true,

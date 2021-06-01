@@ -32,7 +32,11 @@ function _iterableToArrayLimit(arr, i) { var _i = arr && (typeof Symbol !== "und
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 function MultiSelectCheckBox(_ref) {
-  var _ref$searchFilterPare = _ref.searchFilterParentDivClassName,
+  var _ref$searchLabelClass = _ref.searchLabelClassName,
+      searchLabelClassName = _ref$searchLabelClass === void 0 ? "" : _ref$searchLabelClass,
+      _ref$searchLabelName = _ref.searchLabelName,
+      searchLabelName = _ref$searchLabelName === void 0 ? "" : _ref$searchLabelName,
+      _ref$searchFilterPare = _ref.searchFilterParentDivClassName,
       searchFilterParentDivClassName = _ref$searchFilterPare === void 0 ? "" : _ref$searchFilterPare,
       _ref$searchFilterClas = _ref.searchFilterClassName,
       searchFilterClassName = _ref$searchFilterClas === void 0 ? "" : _ref$searchFilterClas,
@@ -95,6 +99,9 @@ function MultiSelectCheckBox(_ref) {
 
   return /*#__PURE__*/(0, _jsxRuntime.jsxs)(_jsxRuntime.Fragment, {
     children: [showSearchBox && /*#__PURE__*/(0, _jsxRuntime.jsx)(_SearchFilter.default, {
+      viewCheckBox: viewCheckBox,
+      searchLabelClassName: searchLabelClassName,
+      searchLabelName: searchLabelName,
       searchTerm: searchTerm,
       setSearchTerm: setSearchTerm,
       searchFilterClassName: searchFilterClassName,
