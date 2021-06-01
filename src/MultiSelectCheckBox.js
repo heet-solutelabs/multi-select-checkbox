@@ -48,7 +48,6 @@ export function MultiSelectCheckBox({
     <>
       {showSearchBox && (
         <SearchFilter
-          viewCheckBox={viewCheckBox}
           searchLabelClassName={searchLabelClassName}
           searchLabelName={searchLabelName}
           searchTerm={searchTerm}

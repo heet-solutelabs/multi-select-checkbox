@@ -99,7 +99,6 @@ function MultiSelectCheckBox(_ref) {
 
   return /*#__PURE__*/(0, _jsxRuntime.jsxs)(_jsxRuntime.Fragment, {
     children: [showSearchBox && /*#__PURE__*/(0, _jsxRuntime.jsx)(_SearchFilter.default, {
-      viewCheckBox: viewCheckBox,
       searchLabelClassName: searchLabelClassName,
       searchLabelName: searchLabelName,
       searchTerm: searchTerm,

@@ -1,8 +1,6 @@
 import React from "react";
-import { checkArrContainsLabelValue } from "./utils/PassOnChangeDataFun";
 
 function SearchFilter({
-  viewCheckBox,
   searchLabelClassName,
   searchLabelName,
   searchTerm,
@@ -12,24 +10,22 @@ function SearchFilter({
   searchFilterParentDivClassName,
 }) {
   return (
-    checkArrContainsLabelValue(viewCheckBox) && (
-      <div className={searchFilterParentDivClassName}>
-        <label htmlFor="search" className={searchLabelClassName}>
-          {searchLabelName}
-        </label>
-        <input
-          id="search"
-          name="search"
-          type="text"
-          value={searchTerm}
-          onChange={(e) => {
-            setSearchTerm(e.target.value);
-          }}
-          className={searchFilterClassName}
-          placeholder={searchPlaceHolderName}
-        />
-      </div>
-    )
+    <div className={searchFilterParentDivClassName}>
+      <label htmlFor="searchTerm" className={searchLabelClassName}>
+        {searchLabelName}
+      </label>
+      <input
+        id="searchTerm"
+        name="searchTerm"
+        type="search"
+        value={searchTerm}
+        onChange={(e) => {
+          setSearchTerm(e.target.value);
+        }}
+        className={searchFilterClassName}
+        placeholder={searchPlaceHolderName}
+      />
+    </div>
   );
 }
 
