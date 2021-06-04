@@ -6,6 +6,7 @@ Simple and lightweight multiple selection component with checkboxes, search and 
 
 - Select All Checkbox Field
 - Search Box for searching list of checkbox items
+- Web Accessibility(no need of mouse => Use `space` to select/unselect checkbox , Use `tab` for switching element)
 
 # Installation and usage
 
