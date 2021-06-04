@@ -1,6 +1,6 @@
 {
   "name": "multi-select-checkbox",
-  "version": "3.1.8",
+  "version": "3.1.9",
   "license": "MIT",
   "description": "Simple and lightweight multiple selection component with checkboxes, search and select-all",
   "author": {
