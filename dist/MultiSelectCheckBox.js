@@ -7,6 +7,8 @@ exports.MultiSelectCheckBox = MultiSelectCheckBox;
 
 var _react = _interopRequireDefault(require("react"));
 
+var _propTypes = _interopRequireDefault(require("prop-types"));
+
 var _DisplayOptions = require("./utils/DisplayOptions");
 
 var _SelectAllCheckBox = _interopRequireDefault(require("./SelectAllCheckBox"));
@@ -48,7 +50,8 @@ function MultiSelectCheckBox(_ref) {
       CheckBoxList = _ref$CheckBoxList === void 0 ? [] : _ref$CheckBoxList,
       _ref$onChange = _ref.onChange,
       onChange = _ref$onChange === void 0 ? function (item) {} : _ref$onChange,
-      selectAllShow = _ref.selectAllShow,
+      _ref$selectAllShow = _ref.selectAllShow,
+      selectAllShow = _ref$selectAllShow === void 0 ? true : _ref$selectAllShow,
       _ref$listOfCheckBoxIt = _ref.listOfCheckBoxItemsClassName,
       listOfCheckBoxItemsClassName = _ref$listOfCheckBoxIt === void 0 ? "" : _ref$listOfCheckBoxIt,
       _ref$selectAllShowCla = _ref.selectAllShowClassName,
@@ -126,3 +129,23 @@ function MultiSelectCheckBox(_ref) {
     })]
   });
 }
+
+MultiSelectCheckBox.propTypes = {
+  searchLabelClassName: _propTypes.default.string,
+  searchLabelName: _propTypes.default.string,
+  searchFilterParentDivClassName: _propTypes.default.string,
+  searchFilterClassName: _propTypes.default.string,
+  searchPlaceHolderName: _propTypes.default.string,
+  showSearchBox: _propTypes.default.bool,
+  CheckBoxList: _propTypes.default.array,
+  onChange: _propTypes.default.func,
+  selectAllShow: _propTypes.default.bool,
+  listOfCheckBoxItemsClassName: _propTypes.default.string,
+  selectAllShowClassName: _propTypes.default.string,
+  selectAllLabelName: _propTypes.default.string,
+  selectAllClassLabelName: _propTypes.default.string,
+  listOfCheckBoxItemsLabelClassName: _propTypes.default.string,
+  selectAllParentDivClassName: _propTypes.default.string,
+  listOfAllCheckBoxParentDivClassName: _propTypes.default.string,
+  selectedCheckBox: _propTypes.default.array
+};
