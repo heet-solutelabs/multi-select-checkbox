@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { assignOption } from "./utils/DisplayOptions";
 import SelectAllCheckBox from "./SelectAllCheckBox";
 import ListAllCheckBox from "./ListAllCheckBox";
@@ -13,7 +14,7 @@ export function MultiSelectCheckBox({
   showSearchBox = true,
   CheckBoxList = [],
   onChange = function (item) {},
-  selectAllShow,
+  selectAllShow = true,
   listOfCheckBoxItemsClassName = "",
   selectAllShowClassName = "",
   selectAllLabelName = "Select All...",
@@ -83,3 +84,23 @@ export function MultiSelectCheckBox({
     </>
   );
 }
+
+MultiSelectCheckBox.propTypes = {
+  searchLabelClassName: PropTypes.string,
+  searchLabelName: PropTypes.string,
+  searchFilterParentDivClassName: PropTypes.string,
+  searchFilterClassName: PropTypes.string,
+  searchPlaceHolderName: PropTypes.string,
+  showSearchBox: PropTypes.bool,
+  CheckBoxList: PropTypes.array,
+  onChange: PropTypes.func,
+  selectAllShow: PropTypes.bool,
+  listOfCheckBoxItemsClassName: PropTypes.string,
+  selectAllShowClassName: PropTypes.string,
+  selectAllLabelName: PropTypes.string,
+  selectAllClassLabelName: PropTypes.string,
+  listOfCheckBoxItemsLabelClassName: PropTypes.string,
+  selectAllParentDivClassName: PropTypes.string,
+  listOfAllCheckBoxParentDivClassName: PropTypes.string,
+  selectedCheckBox: PropTypes.array,
+};

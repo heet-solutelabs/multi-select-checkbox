@@ -1,6 +1,6 @@
 {
   "name": "multi-select-checkbox",
-  "version": "3.1.4",
+  "version": "3.1.8",
   "license": "MIT",
   "description": "Simple and lightweight multiple selection component with checkboxes, search and select-all",
   "author": {
@@ -32,8 +32,9 @@
     ]
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.10.4",
+    "@babel/cli": "^7.14.3",
     "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.10.4",
     "@babel/preset-react": "^7.13.13",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -54,5 +55,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "dependencies": {
+    "prop-types": "^15.7.2"
   }
 }
